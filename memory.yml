@@ -1,0 +1,16 @@
+
+---
+ - name: check server memory
+   hosts: all
+   become: yes
+
+
+   tasks:
+    - name: get memory
+      ansible.builtin.command: free -g
+      register: memory_result
+
+    - name: display memory
+      ansible.builtin.debug:
+        msg: " the memory is {{memory_result.stdout}}"
+

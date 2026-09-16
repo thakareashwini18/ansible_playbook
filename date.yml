@@ -1,0 +1,17 @@
+---
+ - name: check server data and time
+   hosts: all
+   become: yes
+
+
+   tasks:
+    - name: get date and time
+      ansible.builtin.command: date
+      register: date_result
+
+    - name: display date
+      ansible.builtin.debug:
+        msg: " the date and time is {{date_result.stdout}}"
+
+
+

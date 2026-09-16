@@ -1,0 +1,10 @@
+---
+ - name: Test ansible node connectivity
+   hosts: DataServer
+
+
+   tasks:
+    - name: ping from controlnode
+      ansible.builtin.ping:
+
+
