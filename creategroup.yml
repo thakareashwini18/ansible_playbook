@@ -1,0 +1,12 @@
+---
+- name: create a group
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create developer group
+      group:
+        name: developer_group
+        state: present
+
+

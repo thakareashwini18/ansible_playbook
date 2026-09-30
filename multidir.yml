@@ -1,0 +1,18 @@
+---
+ - name: create multiple directory
+   hosts: all
+   become: true
+
+   tasks:
+     - name: create multi dir
+       ansible.builtin.file:
+         path: "{{ item}}"
+         state: directory
+         mode: '777'
+
+       loop:
+           - /home/ubuntu/dir2
+           - /home/ubuntu/dir3
+           - /home/ubuntu/dir4
+
+

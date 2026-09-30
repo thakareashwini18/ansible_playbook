@@ -1,0 +1,12 @@
+---
+ - name: create directory
+   hosts: all
+   become: true
+
+   tasks:
+     - name: create new directory
+       ansible.builtin.file:
+         path: /home/ubuntu/newdir
+         state: directory
+         mode: '777'
+

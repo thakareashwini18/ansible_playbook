@@ -1,0 +1,11 @@
+---
+- name: Change file permission
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Change file permission
+      ansible.builtin.file:
+        path: /home/ubuntu/word1.txt
+        mode: '0644'
+

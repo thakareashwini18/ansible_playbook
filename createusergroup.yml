@@ -1,0 +1,20 @@
+---
+- name: create user and add to group
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create devops group
+      group:
+        name: devopsgroup
+        state: present
+
+    - name: create devops1 user
+      user: 
+       name: devops1
+       group: devopsgroup
+       append: yes
+       state: present
+
+
+

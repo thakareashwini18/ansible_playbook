@@ -1,0 +1,11 @@
+---
+- name: delete directory
+  hosts: all
+  become: true
+
+  tasks:
+    - name: del dir
+      ansible.builtin.file:
+        path: /home/ubuntu/dir2
+        state: absent
+

@@ -1,0 +1,12 @@
+---
+- name: delete a file
+  hosts: all
+  become: true
+
+  tasks:
+    - name: del file
+      ansible.builtin.file:
+        path: /home/ubuntu/word3.txt
+        state: absent
+
+

@@ -1,0 +1,20 @@
+---
+- name: add content to file
+  hosts: all
+  become: true
+
+  tasks:
+    - name: add content to existing file
+      ansible.builtin.copy:
+        dest: /home/ubuntu/file1.txt
+        content: |
+         adding new data to file 1
+        mode: '777'
+
+    - name: add content to new file
+      ansible.builtin.copy:
+        dest: /home/ubuntu/file5.txt
+        content: |
+         adding new data to file 5
+        mode: '777'
+

@@ -1,0 +1,13 @@
+---
+- name: Change file ownership
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Change file ownership
+      ansible.builtin.file:
+        path: /home/ubuntu/word2.txt
+        owner: ubuntu
+        group: ubuntu
+
+

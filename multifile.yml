@@ -1,0 +1,15 @@
+---
+- name: Create multiple files
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Create multiple files
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: touch
+        mode: '0777'
+      loop:
+        - /home/ubuntu/word1.txt
+        - /home/ubuntu/word2.txt
+        - /home/ubuntu/word3.txt

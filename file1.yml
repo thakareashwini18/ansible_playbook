@@ -1,0 +1,12 @@
+---
+ - name: create file
+   hosts: all
+   become: true
+
+   tasks:
+     - name: create new file
+       ansible.builtin.file:
+         path: /home/ubuntu/word.txt
+         state: touch
+         mode: '777'
+

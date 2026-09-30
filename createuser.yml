@@ -1,0 +1,11 @@
+---
+- name: create a user
+  hosts: all
+  become: true
+
+  tasks:
+    - name: create devopsuser
+      user:
+        name: devopsuser
+        state: present
+

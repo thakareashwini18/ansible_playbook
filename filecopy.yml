@@ -1,0 +1,11 @@
+---
+- name: Copy a file
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Copy file to managed node
+      ansible.builtin.copy:
+        src: fileoncn.txt
+        dest: /home/ubuntu/fileoncn.txt
+        mode: '777'
