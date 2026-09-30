@@ -4,6 +4,6 @@
 
 
    tasks:
-    - name: ping from controlnode
+    - name: ping from ControlNode
       ansible.builtin.ping:
 

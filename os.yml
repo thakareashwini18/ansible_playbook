@@ -1,0 +1,14 @@
+---
+ - name: check operating system
+   hosts: all
+   become: true
+
+
+   tasks:
+    - name: get operating system information
+      ansible.builtin.command: cat /etc/os-release
+      register: os_result
+
+    - name: display os info
+      ansible.builtin.debug:
+        msg: " the operating system is {{os_result.stdout}}"
